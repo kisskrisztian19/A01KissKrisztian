@@ -21,7 +21,7 @@ namespace A01KissKrisztian
             }
             olvas.Close();
         }
-        static void Maximumertek()
+        static int Maximumertek()
         {
             //Console.Writeline(Lista.Max);
             int maxertek = 0;
@@ -32,9 +32,10 @@ namespace A01KissKrisztian
                     maxertek = Lista[i];
                 }
             }
-            Console.WriteLine($"A maximum: {maxertek}");
+            
+            return maxertek;
         }
-        static void Egyediek()
+        static int Egyediek()
         {
             int szamlalo = 0;
             StreamWriter iras = new StreamWriter("Egyediek.txt");
@@ -47,13 +48,14 @@ namespace A01KissKrisztian
                 }
             }
             iras.Close();
-            Console.WriteLine($"5 és 7 oszthatóak száma: {szamlalo}");
+            
+            return szamlalo;
         }
         static void Main(string[] args)
         {
             Beolvasas();
-            Maximumertek();
-            Egyediek();
+            Console.WriteLine($"A maximum: {Maximumertek()}");
+            Console.WriteLine($"5 és 7 oszthatóak száma: {Egyediek()}");
             Console.ReadLine();
         }
     }
