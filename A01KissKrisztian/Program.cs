@@ -25,11 +25,11 @@ namespace A01KissKrisztian
         {
             //Console.Writeline(Lista.Max);
             int maxertek = 0;
-            for (int i = 0; i < Lista.Count-1; i++)
+            for (int i = 0; i < Lista.Count; i++)
             {
-                if (Lista[i] < Lista[i + 1])
+                if (maxertek < Lista[i])
                 {
-                    maxertek = Lista[i + 1];
+                    maxertek = Lista[i];
                 }
             }
             Console.WriteLine($"A maximum: {maxertek}");
