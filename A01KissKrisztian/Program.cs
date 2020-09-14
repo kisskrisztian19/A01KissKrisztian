@@ -24,21 +24,36 @@ namespace A01KissKrisztian
         static void Maximumertek()
         {
             //Console.Writeline(Lista.Max);
-            int maxertek;
-            for (int i = 0; i < Lista.Count; i++)
+            int maxertek = 0;
+            for (int i = 0; i < Lista.Count-1; i++)
             {
-                if (Lista[i] < Lista[i+1])
+                if (Lista[i] < Lista[i + 1])
                 {
                     maxertek = Lista[i + 1];
                 }
             }
             Console.WriteLine($"A maximum: {maxertek}");
         }
-
+        static void Egyediek()
+        {
+            int szamlalo = 0;
+            StreamWriter iras = new StreamWriter("Egyediek.txt");
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                if (Lista[i] % 5 == 0 && Lista[i] % 7 == 0)
+                {
+                    szamlalo++;
+                    iras.WriteLine(Lista[i]);
+                }
+            }
+            iras.Close();
+            Console.WriteLine($"5 és 7 oszthatóak száma: {szamlalo}");
+        }
         static void Main(string[] args)
         {
             Beolvasas();
             Maximumertek();
+            Egyediek();
             Console.ReadLine();
         }
     }
