@@ -21,9 +21,24 @@ namespace A01KissKrisztian
             }
             olvas.Close();
         }
+        static void Maximumertek()
+        {
+            //Console.Writeline(Lista.Max);
+            int maxertek;
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                if (Lista[i] < Lista[i+1])
+                {
+                    maxertek = Lista[i + 1];
+                }
+            }
+            Console.WriteLine($"A maximum: {maxertek}");
+        }
+
         static void Main(string[] args)
         {
             Beolvasas();
+            Maximumertek();
             Console.ReadLine();
         }
     }
